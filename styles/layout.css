@@ -1,0 +1,80 @@
+/* layout.css */
+
+/* Navigation layout */
+nav {
+    background-color: #6A5ACD; /* Dark background color */
+    padding: 20px; /* Increased padding */
+    text-align: center; /* Center-align text */
+}
+/* Styles for navigation links */
+
+nav a {
+    color: #fff; /* White text color */
+    text-decoration: none; /* Remove underline from links */
+    font-size: 18px; /* Larger font size */
+    margin: 0 15px; /* Add spacing between navigation links */
+    transition: color 0.3s; /* Smooth color transition on hover */
+}
+/* Use pseudo classes/elements */
+nav a:hover {
+    color: #FFD700; /* Change text color to gold on hover */
+}
+
+/* Main content layout */
+section {
+    width: 80%;
+    margin: 20px auto;
+    text-align: center;
+}
+
+/* Styles for section headings */
+section h2 {
+    font-size: 24px; /* Larger heading size */
+    color: #333; /* Dark text color */
+    margin-bottom: 20px; /* Add spacing below headings */
+}
+ 
+ /* Styles for paragraphs */
+section p {
+    font-size: 16px; /* Larger paragraph text */
+    color: #666; /* Slightly darker text color */
+    line-height: 1.6; /* Increase line height for better readability */
+}
+
+/* Styles for images within sections */
+section img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px; /* Add rounded corners to images */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Add subtle shadow effect */
+    transition: transform 0.3s ease-in-out; /* Smooth transition on hover */
+}
+
+section img:hover {
+    transform: scale(1.1); /* Scale up image slightly on hover */
+}
+
+
+
+/* Product name layout   */
+
+.product figcaption {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent black background */
+    color: #fff; /* White text color */
+    padding: 10px;
+    margin: 0;
+    font-size: 14px;
+    text-align: center;
+    opacity: 0; /* Initially hidden */
+    transition: opacity 0.3s ease;
+}
+
+.product:hover figcaption {
+    opacity: 1; /* Show on hover */
+}
+
+
