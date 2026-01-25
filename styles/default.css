@@ -1,0 +1,53 @@
+/* default.css - simple styling for all WEB115 pages with light blue background */
+/* Body and background */
+body {
+  background-color: #cce7ff; /* light blue background */
+  color: #111;               /* darker gray text for better contrast */
+  font-family: Arial, Verdana, sans-serif; /* simple, readable fonts */
+  line-height: 1.6;
+  margin: 0;
+  padding: 0;
+}
+
+/* Header, Main, Footer spacing */
+header, main, footer {
+  padding: 20px;
+  max-width: 900px;
+  margin: 0 auto; /* center content */
+}
+
+/* Navigation links */
+nav a {
+  text-decoration: none; /* no underline except links */
+  color: #003366;        /* darker blue for better contrast */
+  margin-right: 15px;
+}
+
+nav a:hover {
+  text-decoration: underline;
+  color: #ff3399;        /* pink accent on hover */
+}
+
+/* Images */
+img {
+  display: block;
+  margin: 20px auto; /* center image */
+  max-width: 100%;   /* responsive */
+  height: auto;      /* keep aspect ratio */
+}
+
+/* Footer links */
+footer a {
+  text-decoration: underline; /* only links have underline */
+  color: #003366;             /* matches nav for consistency */
+}
+
+footer a:hover {
+  color: #ff3399;             /* pink accent on hover */
+}
+
+footer p {
+  margin-top: 10px;
+  font-size: 0.9em;
+  color: #555;
+}
