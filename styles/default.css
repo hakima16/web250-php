@@ -1,53 +1,102 @@
-/* default.css - simple styling for all WEB115 pages with light blue background */
-/* Body and background */
 body {
-  background-color: #cce7ff; /* light blue background */
-  color: #111;               /* darker gray text for better contrast */
-  font-family: Arial, Verdana, sans-serif; /* simple, readable fonts */
-  line-height: 1.6;
-  margin: 0;
-  padding: 0;
+    font-family: 'Arial', Helvetica, sans-serif;
+    background-color: #F0F4F8; /* light neutral for contrast */
+    color: #333333; /* dark text for readability */
+    line-height: 1.6;
 }
 
-/* Header, Main, Footer spacing */
-header, main, footer {
-  padding: 20px;
-  max-width: 900px;
-  margin: 0 auto; /* center content */
+/* Header */
+header {
+    text-align: center;
+    padding: 1.5rem;
+    background-color: #3C096C; /* Vivid Nightfall deep purple */
+    color: #F0F4F8; /* light text */
 }
 
-/* Navigation links */
+h1 {
+    /* keep your existing h1 styles */
+    font-family: 'Georgia', serif;
+    color: #E0AAFF; /* whatever you have now */
+}
+
+h2 {
+    font-family: 'Georgia', serif; /* same font as h1 */
+    color: #500879; /* new deep purple for h2 */
+}
+
+/* Navigation */
 nav a {
-  text-decoration: none; /* no underline except links */
-  color: #003366;        /* darker blue for better contrast */
-  margin-right: 15px;
+    color: #F0F4F8; /* white/light nav links */
+    text-decoration: none;
+    margin: 0 10px;
+    font-weight: bold;
 }
 
 nav a:hover {
-  text-decoration: underline;
-  color: #ff3399;        /* pink accent on hover */
+    color: #FF77FF; /* hover vivid pink accent */
+    text-decoration: underline;
+    cursor: pointer;
 }
 
-/* Images */
-img {
-  display: block;
-  margin: 20px auto; /* center image */
-  max-width: 100%;   /* responsive */
-  height: auto;      /* keep aspect ratio */
+/* Main */
+main {
+    width: 80%;
+    max-width: 900px;
+    margin: 2rem auto;
 }
 
-/* Footer links */
-footer a {
-  text-decoration: underline; /* only links have underline */
-  color: #003366;             /* matches nav for consistency */
+main p {
+    margin-bottom: 1rem;
 }
 
-footer a:hover {
-  color: #ff3399;             /* pink accent on hover */
+/* Figure & Image */
+figure {
+    text-align: center;
+    margin: 2rem 0;
 }
 
-footer p {
-  margin-top: 10px;
-  font-size: 0.9em;
-  color: #555;
+figure img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+
+figcaption {
+    font-style: italic;
+    margin-top: 0.5rem;
+    color: #730d85; /* soft pastel purple */
+}
+
+/* Links in content */
+a {
+    color: #7F00FF; /* vivid purple-blue */
+    text-decoration: none;
+}
+
+a:hover {
+    color: #FF77FF; /* vivid pink accent */
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+/* Blockquote */
+blockquote {
+    text-align: center;
+    font-style: italic;
+    margin: 2rem 0;
+    color: #AA00FF; /* vivid accent */
+}
+
+blockquote br {
+    line-height: 1.5;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 1rem;
+    margin-top: 2rem;
+    font-size: 0.9rem;
+    background-color: #3C096C; /* deep purple */
+    color: #F0F4F8; /* light text */
 }
