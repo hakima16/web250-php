@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <!-- Metadata -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Home</title>
+
+  <!-- Link to CSS file -->
+  <link rel="stylesheet" type="text/css" href="styles/default.css" />
+</head>
+
+<body>
+  <!-- Pulls in header.html -->
+<div data-include="components/header.html"></div>
+
+  <main>
+    <h2>Home</h2>
+    <p>Hi! I’m Hakima, and this is my personal web homepage. I created this site as part of my WEB250 coursework. Here you will find my assignments, projects, and information about me.</p>
+    <p>I hope you enjoy exploring my site and learning about my journey in web development. Feel free to browse my introduction and review my course contract to see what I’ll be working on this semester.</p>
+  </main>
+
+  <!-- Pulls in footer.html -->
+<div data-include="components/footer.html"></div>
+
+  <!-- script-->
+  <script src="scripts/HTMLInclude.js"></script>
+    
+	
+  <!-- Validator script (optional for validation cloud) -->
+  <script src="https://lint.page/kit/880bd5.js" crossorigin="anonymous"></script>
+  
+       
+</body>
+    
+</html>
+
+
