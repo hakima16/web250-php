@@ -11,7 +11,7 @@
 </head>
 <h1>Welcome to Super Duper Paratroopers</h1>
 <p>
-	<img class="one" src="images/Parachutist.jpeg" alt="The Girl parachutists" />
+	<img class="one" src="images/Parachutist.jpg" alt="The Girl parachutists" />
 
 Paratroopers are used for tactical advantage as they can be inserted into the battlefield from the air, thereby allowing them to be positioned in areas not accessible by land. It is one of the three types of "forced entry" strategic techniques for entering a theater of war; the other two are by land and sea. This ability to enter the battle from different locations allows paratroopers to evade fortifications that are in place to prevent attack from a specific direction, and the possible use of paratroopers forces an army to spread their defenses to protect other areas which would normally be safe by virtue of the geography. Another common use for paratroopers is to establish an airhead for landing other units.
 </p>
