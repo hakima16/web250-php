@@ -9,7 +9,7 @@
     <a href="https://www.linkedin.com/in/hakima-chabane-08674a1a4/" target="_blank">LinkedIn</a>
 
     <!-- your links and attribution -->
-    <p>Page built by Hakima’s Helpful Crane</p>
+    <p>Page built by Hakima Chabane</p>
   
    
    <!-- Validator script -->
