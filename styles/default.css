@@ -93,10 +93,14 @@ blockquote br {
 
 /* Footer */
 footer {
+    background-color: var(--dark-purple);
+    color: var(--white);
     text-align: center;
-    padding: 1rem;
-    margin-top: 2rem;
-    font-size: 0.9rem;
-    background-color: #3C096C; /* deep purple */
-    color: #F0F4F8; /* light text */
+    padding: 0.8rem;
+    margin-top: 1rem;
+}
+
+footer a {
+    color: var(--white);
+    font-weight: bold;
 }
