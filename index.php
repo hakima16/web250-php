@@ -1,39 +1,62 @@
+<?php
+// index.php – main controller
+
+// Determine which page to show (default to 'home')
+$page = $_GET['page'] ?? 'home';
+
+// Site name for dynamic titles
+$site_name = "Hakima Chabane's Helpful Crane | WEB250 PHP Site";
+
+// Map page names to content files (inside contents/)
+$allowed_pages = [
+    'home'         => 'contents/index.php',
+    'introduction' => 'contents/introduction.php',
+    'contract'     => 'contents/contract.php'
+];
+
+// Get the content file, fallback to home.php if page is invalid
+$content = $allowed_pages[$page] ?? 'contents/home.php';
+
+// Dynamic page title
+$title = $site_name . " | " . ucfirst($page);
+?>
+
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-  <!-- Metadata -->
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Home</title>
-
-  <!-- Link to CSS file -->
-  <link rel="stylesheet" type="text/css" href="styles/default.css" />
+  <title><?php echo $title; ?></title>
+  <link rel="stylesheet" href="styles/default.css">
 </head>
-
 <body>
-  <!-- Pulls in header.html -->
-<div data-include="components/header.html"></div>
 
-  <main>
-    <h2>Home</h2>
-    <p>Hi! I’m Hakima, and this is my personal web homepage. I created this site as part of my WEB250 coursework. Here you will find my assignments, projects, and information about me.</p>
-    <p>I hope you enjoy exploring my site and learning about my journey in web development. Feel free to browse my introduction and review my course contract to see what I’ll be working on this semester.</p>
-  </main>
+<header>
+    <h1>Hakima Chabane's Helpful Crane | WEB250</h1>
+    <nav>
+        <a href="index.php?page=index">Home</a> |
+        <a href="index.php?page=introduction">Introduction</a> |
+        <a href="index.php?page=contract">Contract</a>
+    </nav>
+</header>
 
-  <!-- Pulls in footer.html -->
-<div data-include="components/footer.html"></div>
+<main>
+    <?php include($content); ?>
+</main>
 
-  <!-- script-->
-  <script src="scripts/HTMLInclude.js"></script>
-    
-	
-  <!-- Validator script (optional for validation cloud) -->
-  <script src="https://lint.page/kit/880bd5.js" crossorigin="anonymous"></script>
-  
-       
+<footer>
+    <p>Page built by Hakima Chabane</p>
+    <p>
+        <a href="https://github.com/hakima16/" target="_blank">GitHub</a> |
+        <a href="https://hakima16.github.io/" target="_blank">GitHub.io</a> |
+        <a href="https://hakima16.github.io/web115/" target="_blank">WEB115</a> |
+        <a href="https://hakima16.github.io/web250" target="_blank">WEB250</a> |
+        <a href="https://hakima16.github.io/web215" target="_blank">WEB215</a> |
+        <a href="https://www.freecodecamp.org/kima16" target="_blank">freeCodeCamp</a> |
+        <a href="https://www.codecademy.com/profiles/kima16" target="_blank">Codecademy</a> |
+        <a href="https://www.linkedin.com/in/hakima-chabane-08674a1a4/" target="_blank">LinkedIn</a>
+    </p>
+</footer>
+
 </body>
-    
 </html>
-
-
