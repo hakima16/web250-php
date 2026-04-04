@@ -36,7 +36,11 @@ $title = $site_name . " | " . ucfirst($page);
     <nav>
         <a href="index.php?page=index">Home</a> |
         <a href="index.php?page=introduction">Introduction</a> |
-        <a href="index.php?page=contract">Contract</a>
+        <a href="index.php?page=contract">Contract</a> |
+		<a href="superduper_static/index.html">Multipage Static</a> |
+        <a href="superduper_php/">Multipage PHP</a> |
+		<a href="joyofphp/">Joy of PHP</a> |
+		<a href="sam-used-cars/">Sam's Used Cars</a>
     </nav>
 </header>
 
