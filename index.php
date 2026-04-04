@@ -9,7 +9,7 @@ $site_name = "Hakima Chabane's Helpful Crane | WEB250 PHP Site";
 
 // Map page names to content files (inside contents/)
 $allowed_pages = [
-    'home'         => 'contents/index.php',
+    'home'         => 'contents/home.php',
     'introduction' => 'contents/introduction.php',
     'contract'     => 'contents/contract.php'
 ];
