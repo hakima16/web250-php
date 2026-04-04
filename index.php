@@ -34,7 +34,7 @@ $title = $site_name . " | " . ucfirst($page);
 <header>
     <h1>Hakima Chabane's Helpful Crane | WEB250</h1>
     <nav>
-        <a href="index.php?page=index">Home</a> |
+        <a href="index.php?page=home">Home</a> |
         <a href="index.php?page=introduction">Introduction</a> |
         <a href="index.php?page=contract">Contract</a> |
 		<a href="superduper_static/index.html">Multipage Static</a> |
