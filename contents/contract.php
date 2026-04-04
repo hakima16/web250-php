@@ -1,7 +1,7 @@
 <h2>Contract</h2>
 
     <p>
-      I,<a href="introduction.php"> Hakima Chabane</a>, agree to abide by the terms of
+      I,<a href="index.php?page=introduction"> Hakima Chabane</a>, agree to abide by the terms of
       the course contract in my WEB250 (spring 2026) with my instructor,
       D.I. von Briesen.
     </p>
