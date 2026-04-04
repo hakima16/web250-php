@@ -1,3 +1,0 @@
-<h2>Home</h2>
-    <p>Hi! I’m Hakima, and this is my personal web homepage. I created this site as part of my WEB250 coursework. Here you will find my assignments, projects, and information about me.</p>
-    <p>I hope you enjoy exploring my site and learning about my journey in web development. Feel free to browse my introduction and review my course contract to see what I’ll be working on this semester.</p>
