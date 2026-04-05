@@ -34,13 +34,15 @@ $title = $site_name . " | " . ucfirst($page);
 <header>
     <h1>Hakima Chabane's Helpful Crane | WEB250</h1>
     <nav>
+        <!-- Main PHP site links -->
         <a href="index.php?page=home">Home</a> |
         <a href="index.php?page=introduction">Introduction</a> |
         <a href="index.php?page=contract">Contract</a> |
-		<a href="superduper_static/index.htm">Multipage Static</a> |
-        <a href="superduper_php/">Multipage PHP</a> |
-		<a href="joyofphp/">Joy of PHP</a> |
-		<a href="sam-used-cars/">Sam's Used Cars</a>
+        <!-- Multipage Site link -->
+        <a href="multipage_sites/indexx.htm">Multipage Site</a> |
+        <!-- Other projects -->
+        <a href="joyofphp/">Joy of PHP</a> |
+        <a href="sam-used-cars/">Sam's Used Cars</a>
     </nav>
 </header>
 
