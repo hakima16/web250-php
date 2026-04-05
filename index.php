@@ -37,7 +37,7 @@ $title = $site_name . " | " . ucfirst($page);
         <a href="index.php?page=home">Home</a> |
         <a href="index.php?page=introduction">Introduction</a> |
         <a href="index.php?page=contract">Contract</a> |
-		<a href="superduper_static/index.html">Multipage Static</a> |
+		<a href="superduper_static/index.htm">Multipage Static</a> |
         <a href="superduper_php/">Multipage PHP</a> |
 		<a href="joyofphp/">Joy of PHP</a> |
 		<a href="sam-used-cars/">Sam's Used Cars</a>
