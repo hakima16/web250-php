@@ -12,6 +12,10 @@
 		<img class = "linkedimage" src = "images/sdp_banner.png" alt = "Super Duper Paratrooper" />
 	</a>
 	<br />
+<!-- home page -->	
+	<nav>
+    <a href="../index.html">Course Home</a> 
+    </nav>
 
 	<a href="?p=home">home</a> | 
 	<a href="?p=alpha">alpha</a> | 
