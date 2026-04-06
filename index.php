@@ -40,7 +40,7 @@ $title = $site_name . " | " . ucfirst($page);
         <a href="index.php?page=contract">Contract</a> |
         <!-- Multipage Site link -->
         <a href="multipage_sites/indexx.htm">Multipage Site</a> |
-        <!-- Other projects -->
+        <!-- joyofphp -->
         <a href="joyofphp/">Joy of PHP</a> |
         <a href="sam-used-cars/">Sam's Used Cars</a>
     </nav>
