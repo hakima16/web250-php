@@ -1,5 +1,5 @@
 <div style="background-color:#ccc; padding:10px;">
-    <a href="index.html">Joy of PHP</a> |
+    <a href="../joyofphp/">Joy of PHP</a> |
     <a href="samsusedcars.html">Sam's Used Cars Home</a> |
     <a href="formEnterCar.htm">Add a Car</a> |
     <a href="ViewCars.php">View Cars - Basic</a> |
