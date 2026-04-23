@@ -1,4 +1,3 @@
-
 <?php
 require 'config_db.php';
 
@@ -6,12 +5,13 @@ $message = '';
 
 /* CREATE */
 if ($_SERVER['REQUEST_METHOD'] === 'POST' && $_POST['action'] === 'insert') {
+    $vin = $_POST['VIN'];
     $make = $_POST['Make'];
     $model = $_POST['Model'];
     $price = $_POST['ASKING_PRICE'];
 
-    $stmt = $mysqli->prepare("INSERT INTO inventory (Make, Model, ASKING_PRICE) VALUES (?, ?, ?)");
-    $stmt->bind_param("ssd", $make, $model, $price);
+    $stmt = $mysqli->prepare("INSERT INTO inventory (VIN, Make, Model, ASKING_PRICE) VALUES (?, ?, ?, ?)");
+    $stmt->bind_param("sssd", $vin, $make, $model, $price);
     $stmt->execute();
 
     $message = "Car added!";
@@ -19,20 +19,28 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && $_POST['action'] === 'insert') {
 
 /* DELETE */
 if (isset($_GET['delete'])) {
-    $id = intval($_GET['delete']);
-    $mysqli->query("DELETE FROM inventory WHERE id=$id");
+    $vin = $mysqli->real_escape_string($_GET['delete']);
+    $mysqli->query("DELETE FROM inventory WHERE VIN='$vin'");
     $message = "Car deleted!";
+}
+
+/* LOAD CAR FOR EDIT */
+$editMode = false;
+if (isset($_GET['edit'])) {
+    $editMode = true;
+    $vin = $mysqli->real_escape_string($_GET['edit']);
+    $car = $mysqli->query("SELECT * FROM inventory WHERE VIN='$vin'")->fetch_assoc();
 }
 
 /* UPDATE */
 if ($_SERVER['REQUEST_METHOD'] === 'POST' && $_POST['action'] === 'update') {
-    $id = $_POST['id'];
+    $vin = $_POST['VIN'];
     $make = $_POST['Make'];
     $model = $_POST['Model'];
     $price = $_POST['ASKING_PRICE'];
 
-    $stmt = $mysqli->prepare("UPDATE inventory SET Make=?, Model=?, ASKING_PRICE=? WHERE id=?");
-    $stmt->bind_param("ssdi", $make, $model, $price, $id);
+    $stmt = $mysqli->prepare("UPDATE inventory SET Make=?, Model=?, ASKING_PRICE=? WHERE VIN=?");
+    $stmt->bind_param("ssds", $make, $model, $price, $vin);
     $stmt->execute();
 
     $message = "Car updated!";
@@ -55,15 +63,47 @@ $cars = $mysqli->query("SELECT * FROM inventory ORDER BY Make, Model");
     <p style="color:green;"><?php echo $message; ?></p>
 <?php endif; ?>
 
-<h2>Add Car</h2>
+<!-- SMART FORM: ADD + EDIT -->
+<h2><?php echo $editMode ? "Edit Car" : "Add Car"; ?></h2>
+
 <form method="post">
-    <input type="hidden" name="action" value="insert">
+    <input type="hidden" name="action" value="<?php echo $editMode ? 'update' : 'insert'; ?>">
 
-    Make: <input type="text" name="Make" required><br><br>
-    Model: <input type="text" name="Model" required><br><br>
-    Price: <input type="number" step="0.01" name="ASKING_PRICE" required><br><br>
+    <?php if ($editMode): ?>
+        <input type="hidden" name="VIN" value="<?php echo $car['VIN']; ?>">
+    <?php endif; ?>
 
-    <button type="submit">Add</button>
+    VIN:
+    <input type="text" name="VIN"
+           value="<?php echo $editMode ? $car['VIN'] : ''; ?>"
+           <?php echo $editMode ? 'readonly' : 'required'; ?>>
+    <br><br>
+
+    Make:
+    <input type="text" name="Make"
+           value="<?php echo $editMode ? $car['Make'] : ''; ?>"
+           required>
+    <br><br>
+
+    Model:
+    <input type="text" name="Model"
+           value="<?php echo $editMode ? $car['Model'] : ''; ?>"
+           required>
+    <br><br>
+
+    Price:
+    <input type="number" step="0.01" name="ASKING_PRICE"
+           value="<?php echo $editMode ? $car['ASKING_PRICE'] : ''; ?>"
+           required>
+    <br><br>
+
+    <button type="submit">
+        <?php echo $editMode ? "Update" : "Add"; ?>
+    </button>
+
+    <?php if ($editMode): ?>
+        <a href="index.php" style="margin-left:20px;">Cancel</a>
+    <?php endif; ?>
 </form>
 
 <hr>
@@ -83,30 +123,12 @@ $cars = $mysqli->query("SELECT * FROM inventory ORDER BY Make, Model");
     <td><?php echo htmlspecialchars($car['Model']); ?></td>
     <td><?php echo htmlspecialchars($car['ASKING_PRICE']); ?></td>
     <td>
-        <a href="?edit=<?php echo $car['id']; ?>">Edit</a> |
-        <a href="?delete=<?php echo $car['id']; ?>" onclick="return confirm('Delete?');">Delete</a>
+        <a href="?edit=<?php echo urlencode($car['VIN']); ?>">Edit</a> |
+        <a href="?delete=<?php echo urlencode($car['VIN']); ?>" onclick="return confirm('Delete?');">Delete</a>
     </td>
 </tr>
 <?php endwhile; ?>
 </table>
-
-<?php if (isset($_GET['edit'])):
-    $id = intval($_GET['edit']);
-    $car = $mysqli->query("SELECT * FROM inventory WHERE id=$id")->fetch_assoc();
-?>
-<hr>
-<h2>Edit Car</h2>
-<form method="post">
-    <input type="hidden" name="action" value="update">
-    <input type="hidden" name="id" value="<?php echo $car['id']; ?>">
-
-    Make: <input type="text" name="Make" value="<?php echo $car['Make']; ?>"><br><br>
-    Model: <input type="text" name="Model" value="<?php echo $car['Model']; ?>"><br><br>
-    Price: <input type="number" step="0.01" name="ASKING_PRICE" value="<?php echo $car['ASKING_PRICE']; ?>"><br><br>
-
-    <button type="submit">Update</button>
-</form>
-<?php endif; ?>
 
 <footer>
     <p>Designed by Hakima Chabane.</p>

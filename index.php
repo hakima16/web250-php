@@ -43,6 +43,8 @@ $title = $site_name . " | " . ucfirst($page);
         <!-- joyofphp -->
         <a href="joyofphp/">Joy of PHP</a> |
         <a href="joyofphp/samsusedcars.html">Sam's Used Cars</a>
+		<!-- Clean up Sam's Used Cars  -->
+        <a href="carapp/">Helpful Crane's Used Cars App</a>
     </nav>
 </header>
 
