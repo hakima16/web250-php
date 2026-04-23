@@ -6,24 +6,31 @@
 <body>
 
 <h1>Sam's Used Cars</h1>
+
 <?php 
 include 'db.php';
-$vin = $_GET['VIN'];
-$query = "DELETE FROM INVENTORY WHERE VIN='$vin'";
-echo "$query <BR>";
-/* Try to query the database */
-if ($result = $mysqli->query($query)) {
-   Echo "The vehicle with VIN $vin has been deleted.";
+
+$vin = $_GET['VIN'] ?? null;
+
+if (!$vin) {
+    echo "No VIN was provided.";
+    exit;
 }
-else
-{
-    echo "Sorry, a vehicle with VIN of $vin cannot be found " . mysql_error()."<br>";
+
+$query = "DELETE FROM INVENTORY WHERE VIN='$vin'";
+
+/* Try to query the database */
+if ($mysqli->query($query)) {
+    echo "<p>The vehicle with VIN <strong>$vin</strong> has been deleted.</p>";
+} else {
+    echo "<p>Error deleting vehicle: " . $mysqli->error . "</p>";
 }
 
 $mysqli->close();
-   
+
+echo "<p><a href='viewcars.php'>Return to Inventory</a></p>";
 ?>
 
 </body>
-
 </html>
+
